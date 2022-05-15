@@ -127,7 +127,13 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AdminBookingController.cs" />
+    <Compile Include="Controllers\AdminPackgeController.cs" />
+    <Compile Include="Controllers\AdminPlacesController.cs" />
+    <Compile Include="Controllers\AdminSubjectController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\MainAdminController.cs" />
+    <Compile Include="Controllers\VisitorController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -185,6 +191,13 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Service\" />
+    <Folder Include="Views\AdminBooking\" />
+    <Folder Include="Views\AdminPackge\" />
+    <Folder Include="Views\AdminPlaces\" />
+    <Folder Include="Views\AdminSubject\" />
+    <Folder Include="Views\MainAdmin\" />
+    <Folder Include="Views\User\" />
+    <Folder Include="Views\Visitor\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
