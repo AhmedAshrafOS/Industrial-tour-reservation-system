@@ -1,4 +1,4 @@
-﻿using Industrial_tour_reservation_system.Models;
+using Industrial_tour_reservation_system.Models;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -125,6 +125,7 @@ namespace Industrial_tour_reservation_system.Controllers
                 if (Current_Subject.SubjectID == 0)
                     return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
                var Deleted_Subject = db.Subjects.Find(Current_Subject.SubjectID);
+
                 if (Current_Subject == null)
                     return HttpNotFound();
                 db.Subjects.Remove(Deleted_Subject);

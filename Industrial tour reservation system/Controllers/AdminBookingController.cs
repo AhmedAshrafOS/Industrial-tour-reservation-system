@@ -1,4 +1,4 @@
-﻿using Industrial_tour_reservation_system.Models;
+using Industrial_tour_reservation_system.Models;
 using Industrial_tour_reservation_system.ViewModels;
 using System;
 using System.Collections.Generic;
