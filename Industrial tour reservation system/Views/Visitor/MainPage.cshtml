@@ -1,0 +1,49 @@
+﻿@model Industrial_tour_reservation_system.ViewModels.PackageViews
+
+@{
+    ViewBag.Title = "MainPage";
+}
+
+<h2>MainPage</h2>
+
+
+<table class="table">
+    @foreach (var item in Model.Subject_List)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+
+        </tr>
+    }
+    @foreach (var item in Model.Place_List)
+    {
+        <tr>
+            <td>
+                @if (item.Image != null)
+                {
+                    <div class="image-size">
+
+                        <img src="~/imgs/PlaceImages/@item.Image" alt="error" class="img-responsive image-center" width="100" height="100" />
+
+                    </div>
+                }
+                @Html.DisplayFor(modelItem => item.Country)
+
+            </td>
+
+
+        </tr>
+    }
+
+</table>
+<button class="btn btn-primary" style=" background-color:black;">
+    @Html.ActionLink("BookNow", "Booking")
+
+</button>
+<button class="btn btn-primary" style=" background-color:black;">
+
+        @Html.ActionLink("MyBookings", "MyBookings")
+
+</button>

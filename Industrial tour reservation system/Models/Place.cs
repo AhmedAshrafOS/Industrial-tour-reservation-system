@@ -12,11 +12,12 @@ namespace Industrial_tour_reservation_system.Models
         public int PlaceID { get; set; }
 
         [Required(ErrorMessage = "This Field is Required")]
+        [Display(Name = "Company")]
         public string companyName { get; set; }
 
         [FileExtensions(Extensions = "jpg,jpeg,png")]
         [DataType(DataType.ImageUrl)]
-        [Display(Name = "Visitor Image")]
+        [Display(Name = "Place Image")]
         public string Image { get; set; }
 
         [Required(ErrorMessage = "This Field is Required")]

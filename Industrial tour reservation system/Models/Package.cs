@@ -46,7 +46,8 @@ namespace Industrial_tour_reservation_system.Models
         [ForeignKey("PlaceID")]
         public virtual Place Place { get; set; }
 
-
+        //many to many realtion
+        public virtual ICollection<VisitorBooking> VisitorBooking { get; set; }
 
     }
 }

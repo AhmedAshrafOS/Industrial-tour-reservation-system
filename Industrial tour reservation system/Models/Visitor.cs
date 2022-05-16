@@ -44,6 +44,9 @@ namespace Industrial_tour_reservation_system.Models
 
         public virtual ICollection<Booking> Bookings { get; set; }
 
+        //many to many realtion
+        public virtual ICollection<VisitorBooking> VisitorBooking { get; set; }
+
 
     }
 }

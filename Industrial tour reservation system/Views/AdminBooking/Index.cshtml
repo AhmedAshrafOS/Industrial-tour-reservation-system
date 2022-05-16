@@ -1,0 +1,44 @@
+﻿@model IEnumerable<Industrial_tour_reservation_system.Models.Booking>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.NameOfVisitor)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NameOfPackage)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NameOfPlace)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.NameOfVisitor)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NameOfPackage)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NameOfPlace)
+        </td>
+        <td>
+            @Html.ActionLink("Details", "DetailsPackage", new { id=item.BookingID }) |
+            @Html.ActionLink("Delete", "DeleteBooking", new { id=item.BookingID })
+        </td>
+    </tr>
+}
+
+</table>

@@ -141,6 +141,14 @@
     <Compile Include="Migrations\202205142239216_FirstDB.designer.cs">
       <DependentUpon>202205142239216_FirstDB.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202205161243172_ChangesInBooking.cs" />
+    <Compile Include="Migrations\202205161243172_ChangesInBooking.designer.cs">
+      <DependentUpon>202205161243172_ChangesInBooking.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202205161447557_ChangesInBookingPart2.cs" />
+    <Compile Include="Migrations\202205161447557_ChangesInBookingPart2.designer.cs">
+      <DependentUpon>202205161447557_ChangesInBookingPart2.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Admin.cs" />
     <Compile Include="Models\Booking.cs" />
@@ -149,7 +157,10 @@
     <Compile Include="Models\Place.cs" />
     <Compile Include="Models\Subject.cs" />
     <Compile Include="Models\Visitor.cs" />
+    <Compile Include="Models\VisitorBooking.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service\Main.cs" />
+
     <Compile Include="ViewModels\PackageViews.cs" />
     <Compile Include="ViewModels\UserBookingView.cs" />
   </ItemGroup>
@@ -162,6 +173,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="imgs\no-user.png" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
@@ -189,14 +201,39 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\MainAdmin\Login.cshtml" />
+    <Content Include="Views\MainAdmin\LoggedIn.cshtml" />
+    <Content Include="Views\AdminSubject\CreateSubject.cshtml" />
+    <Content Include="Views\AdminSubject\Index.cshtml" />
+    <Content Include="Views\AdminSubject\SubjectDetails.cshtml" />
+    <Content Include="Views\AdminSubject\EditSubject.cshtml" />
+    <Content Include="Views\AdminSubject\DeleteSubject.cshtml" />
+    <Content Include="Views\AdminPlaces\Index.cshtml" />
+    <Content Include="Views\AdminPlaces\CreatePlace.cshtml" />
+    <Content Include="Views\AdminPlaces\PlaceDetails.cshtml" />
+    <Content Include="Views\AdminPlaces\DeletePlace.cshtml" />
+    <Content Include="Views\AdminPlaces\EditPlace.cshtml" />
+    <Content Include="Views\AdminPackge\CreatePackage.cshtml" />
+    <Content Include="Views\AdminPackge\Index.cshtml" />
+    <Content Include="Views\AdminPackge\DetailsPackage.cshtml" />
+    <Content Include="Views\AdminPackge\EditPackage.cshtml" />
+    <Content Include="Views\AdminPackge\DeletePackage.cshtml" />
+    <Content Include="Views\Visitor\Register.cshtml" />
+    <Content Include="Views\Visitor\MainPage.cshtml" />
+    <Content Include="Views\Visitor\Booking.cshtml" />
+    <Content Include="Views\Visitor\MyBookings.cshtml" />
+    <Content Include="Views\AdminBooking\Index.cshtml" />
+    <Content Include="Views\AdminBooking\DetailsPackage.cshtml" />
+    <Content Include="Views\AdminBooking\DeleteBooking.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="imgs\PlaceImages\" />
+    <Folder Include="imgs\ProfileVisitor\" />
     <Folder Include="Views\AdminBooking\" />
     <Folder Include="Views\AdminPackge\" />
     <Folder Include="Views\AdminPlaces\" />
     <Folder Include="Views\User\" />
-    <Folder Include="Views\Visitor\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -214,6 +251,12 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202205142239216_FirstDB.resx">
       <DependentUpon>202205142239216_FirstDB.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202205161243172_ChangesInBooking.resx">
+      <DependentUpon>202205161243172_ChangesInBooking.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202205161447557_ChangesInBookingPart2.resx">
+      <DependentUpon>202205161447557_ChangesInBookingPart2.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

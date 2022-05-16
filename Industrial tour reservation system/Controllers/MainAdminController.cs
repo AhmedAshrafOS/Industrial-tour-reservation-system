@@ -1,4 +1,5 @@
-﻿using Industrial_tour_reservation_system.Models;
+using Industrial_tour_reservation_system.Models;
+using Industrial_tour_reservation_system.Service;
 using Industrial_tour_reservation_system.ViewModels;
 using System;
 using System.Collections.Generic;
@@ -6,15 +7,52 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.Routing;
 
 namespace Industrial_tour_reservation_system.Controllers
 {
     public class AdminBookingController : Controller
     {
-        // GET: AdminBooking
-        private DbTour db = new DbTour();
+        /// <Conustructors> Initialize
+        private DbTour db;
+        private readonly Main MainInterFace;
 
-        public ActionResult Index()
+        public MainAdminController()
+        {
+            MainInterFace = new Main();
+            db = new DbTour();
+        }
+        /// </Conustructors>
+        
+        [HttpGet]
+        public ActionResult Login()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult Login(Admin AdminData)
+        {
+            var isLoggedIn = MainInterFace.Login(AdminData.AdminName, AdminData.Password);
+            if (isLoggedIn==1)
+            {
+                return RedirectToAction("LoggedIn", "MainAdmin");
+            }
+            if (isLoggedIn == 2)
+            {
+                return RedirectToAction("Login", "Visitor", new { User = AdminData.AdminName });
+                //return RedirectToAction("Login", "Visitor");
+            }
+            else
+            {
+                ModelState.AddModelError("", "Username or Password is wrong");
+
+            }
+
+            return View();
+        }
+
+        public ActionResult LoggedIn()
         {
 
             var Booked = db.Bookings.ToList();
