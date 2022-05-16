@@ -1,0 +1,99 @@
+﻿@model IEnumerable<Industrial_tour_reservation_system.Models.Package>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "CreatePackage")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Place.companyName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Subject.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PackageName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.startLocation)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Transport)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CostForOne)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Description)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Min)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Hour)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Day)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Month)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Year)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Place.companyName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Subject.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PackageName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.startLocation)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Transport)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CostForOne)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Description)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Min)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Hour)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Day)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Month)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Year)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "EditPackage", new { id=item.PackageID }) |
+            @Html.ActionLink("Details", "DetailsPackage", new { id=item.PackageID }) |
+            @Html.ActionLink("Delete", "DeletePackage", new { id=item.PackageID })
+        </td>
+    </tr>
+}
+
+</table>
