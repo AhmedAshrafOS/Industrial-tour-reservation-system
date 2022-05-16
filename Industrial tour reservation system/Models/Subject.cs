@@ -12,6 +12,7 @@ namespace Industrial_tour_reservation_system.Models
         public int SubjectID { get; set; }
 
         [Required(ErrorMessage = "This Field is Required")]
+        [Display(Name = "Subject")]
         public string Name { get; set; }
 
 

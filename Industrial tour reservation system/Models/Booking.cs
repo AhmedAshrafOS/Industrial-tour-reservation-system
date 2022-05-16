@@ -12,28 +12,19 @@ namespace Industrial_tour_reservation_system.Models
         [Key]
         public int BookingID { get; set; }
 
-        [Required(ErrorMessage = "This Feild is Requierd")]
-        public string BookingName { get; set; }
-        [Required(ErrorMessage = "This Feild is Requierd")]
-        public float TotalCost { get; set; }
+        public int PackageID { get; set; }
 
-        [Required(ErrorMessage = "This Feild is Requierd")]
-        public int NumOfVistors { get; set; }
+        public int VisitorID { get; set; }
 
-        public int Year { get; set; }
+        public string NameOfVisitor { get; set; }
 
-        public int Month { get; set; }
+        public string NameOfPackage { get; set; }
 
-        public int Day { get; set; }
+        public string NameOfPlace { get; set; }
 
-        public int Hour { get; set; }
-
-        public int Minuit { get; set; }
 
         //Realtion with Vistor (OneToMany)
-        public int VisitorID { get; set; }
-        [ForeignKey("VisitorID")]
-        public virtual Visitor Visitor { get; set; }
+
 
     }
 }

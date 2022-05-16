@@ -16,7 +16,7 @@ namespace Industrial_tour_reservation_system
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
-                defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
+                defaults: new { controller = "MainAdmin", action = "Login", id = UrlParameter.Optional }
             );
         }
     }
