@@ -189,19 +189,12 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\AdminSubject\CreateSubject.cshtml" />
-    <Content Include="Views\AdminSubject\DeleteSubject.cshtml" />
-    <Content Include="Views\AdminSubject\EditSubject.cshtml" />
-    <Content Include="Views\AdminSubject\Index.cshtml" />
-    <Content Include="Views\AdminSubject\SubjectDetails.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Service\" />
     <Folder Include="Views\AdminBooking\" />
     <Folder Include="Views\AdminPackge\" />
     <Folder Include="Views\AdminPlaces\" />
-    <Folder Include="Views\MainAdmin\" />
     <Folder Include="Views\User\" />
     <Folder Include="Views\Visitor\" />
   </ItemGroup>
