@@ -150,6 +150,9 @@
     <Compile Include="Models\Subject.cs" />
     <Compile Include="Models\Visitor.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service\Main.cs" />
+    <Compile Include="ViewModels\PackageViews.cs" />
+    <Compile Include="ViewModels\UserBookingView.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap-theme.css" />
@@ -187,15 +190,15 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\MainAdmin\LoggedIn.cshtml" />
+    <Content Include="Views\MainAdmin\Login.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Service\" />
     <Folder Include="Views\AdminBooking\" />
     <Folder Include="Views\AdminPackge\" />
     <Folder Include="Views\AdminPlaces\" />
     <Folder Include="Views\AdminSubject\" />
-    <Folder Include="Views\MainAdmin\" />
     <Folder Include="Views\User\" />
     <Folder Include="Views\Visitor\" />
   </ItemGroup>
