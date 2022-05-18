@@ -18,7 +18,7 @@ namespace Industrial_tour_reservation_system.Service
         {
             context = new DbTour();
         }
-
+       
         public int Login(string User, string Password)
         {
             int Check_Validate;

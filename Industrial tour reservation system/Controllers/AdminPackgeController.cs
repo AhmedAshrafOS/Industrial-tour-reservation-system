@@ -108,8 +108,8 @@ namespace Industrial_tour_reservation_system.Controllers
                 Current_Package.Day = Edited_Package.Package.Day;
                 Current_Package.Month = Edited_Package.Package.Month;
                 Current_Package.Year = Edited_Package.Package.Year;
-                Current_Package.Subject = Edited_Package.Package.Subject;
-                Current_Package.Place = Edited_Package.Package.Place;
+                Current_Package.SubjectID = Edited_Package.Package.SubjectID;
+                Current_Package.PlaceID = Edited_Package.Package.PlaceID;
 
 
                 db.Entry(Current_Package).State = EntityState.Modified;

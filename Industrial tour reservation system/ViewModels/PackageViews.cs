@@ -10,6 +10,7 @@ namespace Industrial_tour_reservation_system.ViewModels
     {
         public Package Package { get; set; }
 
+        public List<Package> Package_List { get; set; }
         public List<Subject> Subject_List { get; set; }
         public List<Place> Place_List { get; set; }
     }

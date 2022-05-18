@@ -1,0 +1,22 @@
+﻿@model Industrial_tour_reservation_system.ViewModels.PackageViews
+
+@{
+    ViewBag.Title = "See_Packages";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="conatinerss">
+    @foreach (var item in Model.Package_List)
+    {
+
+        <div class="card h-100">
+            <div class="card-body">
+                <h2 class="card-title">@item.PackageName</h2>
+                <p class="card-text">@item.Description</p>
+            </div>
+            <div class="card-footer"><a class="btn btn-primary btn-sm" href="@Url.Action("DetailsPackage", "Visitor", new { id = item.PackageID})">More Info</a></div>
+        </div>
+        <br />
+        <br />
+
+    }
+</div>

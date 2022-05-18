@@ -12,7 +12,14 @@ namespace Industrial_tour_reservation_system.Controllers
         {
             return View();
         }
-
+        public ActionResult SignIn()
+        {
+            return View();
+        }
+        public ActionResult SignUp()
+        {
+            return View();
+        }
         public ActionResult About()
         {
             ViewBag.Message = "Your application description page.";
