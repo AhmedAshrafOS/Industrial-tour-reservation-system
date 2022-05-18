@@ -4,46 +4,82 @@
     ViewBag.Title = "MainPage";
 }
 
-<h2>MainPage</h2>
+<!-- Masthead-->
+<header class="masthead">
+    <div class="container">
+        <div class="masthead-subheading">Welcome To Our Company</div>
+        <div class="masthead-heading text-uppercase">Lets Go For A Trip!   </div>
+        <a class="btn btn-primary btn-xl text-uppercase" href="@Url.Action("Booking", "Visitor")">BookNow</a>
+    </div>
+</header>
+<!-- Services-->
+<section class="page-section" id="services">
+    <div class="container">
+        <div class="text-center">
+            <h2 class="section-heading text-uppercase">Services</h2>
+            <h3 class="section-subheading text-muted">Never Worry,When u Choice Us</h3>
+        </div>
+        <div class="row text-center">
+            <div class="col-md-4">
+                <span class="fa-stack fa-4x">
+                    <i class="fas fa-circle fa-stack-2x text-primary"></i>
+                    <i class="fa-solid fa-bus fa-stack-1x fa-inverse"></i>
+                </span>
+                <h4 class="my-3">Transports</h4>
+                <p class="text-muted">Our Company Have All Transports U Imagein planes or buses in all degeres and all Comfort  .</p>
+            </div>
+            <div class="col-md-4">
+                <span class="fa-stack fa-4x">
+                    <i class="fas fa-circle fa-stack-2x text-primary"></i>
+                    <i class="fa-solid fa-map-location-dot fa-stack-1x fa-inverse"></i>
+                </span>
+                <h4 class="my-3">All Placs</h4>
+                <p class="text-muted">Our Company Go To All Places in and out side Egypt Just Book ur Package Now and lets go for Some Fun!!</p>
+            </div>
+            <div class="col-md-4">
+                <span class="fa-stack fa-4x">
+                    <i class="fas fa-circle fa-stack-2x text-primary"></i>
+                    <i class="fa-solid fa-shield-heart fa-stack-1x fa-inverse"></i>
+                </span>
+                <h4 class="my-3">You Safe</h4>
+                <p class="text-muted">When U choose Us Never Worry Our Number One Role Tha We Should Protect Our Customers.</p>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="page-section bg-light" id="team">
+    <div class="container">
+        <div class="text-center">
+            <h2 class="section-heading text-uppercase">Our Amazing Journeys</h2>
+            <h3 class="section-subheading text-muted">Some Of Our Best Journy We Made ! </h3>
+        </div>
+        <div class="row">
+            <div class="col-lg-4">
+                <div class="team-member">
+                    <img class="mx-auto rounded-circle" src="~/images/img/team/1.jpg" alt="..." />
+                    <h4>Sharm ElSheikh</h4>
+                    <p class="text-muted">Sinaa</p>
+             
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="team-member">
+                    <img class="mx-auto rounded-circle" src="~/images/img/team/2.jpg" alt="..." />
+                    <h4>North Coast</h4>
+                    <p class="text-muted">Alex</p>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="team-member">
+                    <img class="mx-auto rounded-circle" src="~/images/img/team/3.jpg" alt="..." />
+                    <h4>Dahab</h4>
+                    <p class="text-muted">Sinaa</p>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-8 mx-auto text-center"><p class="large text-muted">What you see now its one of our best journeys the we made what are you watinig for book now and be with us in the next journy.</p></div>
+        </div>
+    </div>
+</section>
 
-
-<table class="table">
-    @foreach (var item in Model.Subject_List)
-    {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Name)
-            </td>
-
-        </tr>
-    }
-    @foreach (var item in Model.Place_List)
-    {
-        <tr>
-            <td>
-                @if (item.Image != null)
-                {
-                    <div class="image-size">
-
-                        <img src="~/imgs/PlaceImages/@item.Image" alt="error" class="img-responsive image-center" width="100" height="100" />
-
-                    </div>
-                }
-                @Html.DisplayFor(modelItem => item.Country)
-
-            </td>
-
-
-        </tr>
-    }
-
-</table>
-<button class="btn btn-primary" style=" background-color:black;">
-    @Html.ActionLink("BookNow", "Booking")
-
-</button>
-<button class="btn btn-primary" style=" background-color:black;">
-
-        @Html.ActionLink("MyBookings", "MyBookings")
-
-</button>

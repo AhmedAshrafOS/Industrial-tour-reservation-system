@@ -76,14 +76,21 @@ namespace Industrial_tour_reservation_system.Controllers
         //_______________MainPage ____________________
         public ActionResult MainPage()
         {
+            return View();
+        }
+        [HttpGet]
+        public ActionResult SeePackages()
+        {
             if (Session["UserName"] != null)
             {
                 var All_Subjects = db.Subjects.ToList();
                 var All_Places = db.Places.ToList();
-                PackageViews PackageViews= new PackageViews()
+                var All_Packages = db.Packages.ToList();
+                PackageViews PackageViews = new PackageViews()
                 {
-                    Place_List= All_Places,
-                    Subject_List= All_Subjects,
+                    Package_List = All_Packages,
+                    Place_List = All_Places,
+                    Subject_List = All_Subjects,
                 };
                 return View(PackageViews);
             }
@@ -99,42 +106,49 @@ namespace Industrial_tour_reservation_system.Controllers
         [HttpGet]
         public ActionResult Booking()
         {
-            var username = Session["UserName"].ToString();
-            var user = db.Visitors.SingleOrDefault(x => x.UserName == (string)username);
-            List<Package> Spcify_Package = new List<Package>();
-            var All_Package = db.Packages.ToList();
-            var All_Bookings = db.VisitorBookings.ToList();
+            if (Session["UserName"] != null)
+            {
+                var username = Session["UserName"].ToString();
+                var user = db.Visitors.SingleOrDefault(x => x.UserName == (string)username);
+                List<Package> Spcify_Package = new List<Package>();
+                var All_Package = db.Packages.ToList();
+                var All_Bookings = db.VisitorBookings.ToList();
 
-            if (All_Bookings.Count == 0)
-            {
-                Spcify_Package = All_Package;
-            }
-            else
-            {
-            
-                foreach (var item in All_Package)
+                if (All_Bookings.Count == 0)
                 {
-                        foreach(var item2 in All_Bookings)
+                    Spcify_Package = All_Package;
+                }
+                else
+                {
+
+                    foreach (var item in All_Package)
+                    {
+                        foreach (var item2 in All_Bookings)
                         {
-                            if (user.VisitorID == item2.VisitorID && item2.PackageID == item.PackageID) 
+                            if (user.VisitorID == item2.VisitorID && item2.PackageID == item.PackageID)
                             {
-                        
+
                             }
                             else
                             {
                                 Spcify_Package.Add(item);
                             }
                         }
+                    }
                 }
+
+                UserBookingView UserBookingView = new UserBookingView
+                {
+                    Visitor = user,
+                    Package_List = Spcify_Package,
+                };
+
+                return View(UserBookingView);
             }
-
-            UserBookingView UserBookingView = new UserBookingView
+            else
             {
-                Visitor= user,
-               Package_List = Spcify_Package,
-            };
-
-            return View(UserBookingView);
+                return RedirectToAction("Login", "MainAdmin");
+            }
         }
 
 
@@ -230,5 +244,15 @@ namespace Industrial_tour_reservation_system.Controllers
         }
 
         //_______________View His Bookings ____________________
+        public ActionResult DetailsPackage(int id)
+        {
+            var Current_Package = db.Packages.SingleOrDefault(x => x.PackageID == id);
+
+            if (Current_Package == null)
+            {
+                return HttpNotFound();
+            }
+            return View(Current_Package);
+        }
     }
 }

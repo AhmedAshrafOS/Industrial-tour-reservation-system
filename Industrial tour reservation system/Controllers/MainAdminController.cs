@@ -11,7 +11,7 @@ using System.Web.Routing;
 
 namespace Industrial_tour_reservation_system.Controllers
 {
-    public class AdminBookingController : Controller
+    public class MainAdminController : Controller
     {
         /// <Conustructors> Initialize
         private DbTour db;
@@ -57,7 +57,7 @@ namespace Industrial_tour_reservation_system.Controllers
 
             var Booked = db.Bookings.ToList();
 
-            return View(Booked);
+            return View();
         }
 
         public ActionResult DetailsPackage(int id)

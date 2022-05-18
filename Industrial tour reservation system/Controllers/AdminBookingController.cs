@@ -12,7 +12,7 @@ namespace Industrial_tour_reservation_system.Controllers
     public class AdminBookingController : Controller
     {
         // GET: AdminBooking
-        private DbTour db = new DbTour();
+        public DbTour db = new DbTour();
 
         public ActionResult Index()
         {

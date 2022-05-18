@@ -2,13 +2,11 @@
 
 @{
     ViewBag.Title = "DetailsPackage";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
 }
 
-<h2>DetailsPackage</h2>
 
-<div>
-    <h4>Package</h4>
-    <hr />
+<div style="min-height:450px;margin-top:100px;">
     <dl class="dl-horizontal">
         <dt>
             @Html.DisplayNameFor(model => model.Place.companyName)
@@ -109,6 +107,6 @@
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.PackageID }) |
+    @Html.ActionLink("Edit", "EditPackage", new { id = Model.PackageID }) |
     @Html.ActionLink("Back to List", "Index")
 </p>

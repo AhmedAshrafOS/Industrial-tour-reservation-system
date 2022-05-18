@@ -2,43 +2,43 @@
 
 @{
     ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
 }
 
-<h2>Index</h2>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.NameOfVisitor)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.NameOfPackage)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.NameOfPlace)
-        </th>
-        <th></th>
-    </tr>
+<div style="min-height:450px;margin-top:100px;">
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.NameOfVisitor)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NameOfPackage)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NameOfPlace)
+            </th>
+            <th></th>
+        </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.NameOfVisitor)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.NameOfPackage)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.NameOfPlace)
-        </td>
-        <td>
-            @Html.ActionLink("Details", "DetailsPackage", new { id=item.BookingID }) |
-            @Html.ActionLink("Delete", "DeleteBooking", new { id=item.BookingID })
-        </td>
-    </tr>
-}
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NameOfVisitor)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NameOfPackage)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NameOfPlace)
+                </td>
+                <td>
+                    @Html.ActionLink("Details", "DetailsPackage", new { id = item.BookingID }) |
+                    @Html.ActionLink("Delete", "DeleteBooking", new { id = item.BookingID })
+                </td>
+            </tr>
+        }
 
-</table>
+    </table>
+</div>

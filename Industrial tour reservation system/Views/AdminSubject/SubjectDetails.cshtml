@@ -2,11 +2,11 @@
 
 @{
     ViewBag.Title = "SubjectDetails";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
 }
 
-<h2>SubjectDetails</h2>
 
-<div>
+<div class="conatinerss">
     <h4>Subject</h4>
     <hr />
     <dl class="dl-horizontal">
@@ -19,8 +19,9 @@
         </dd>
 
     </dl>
+    <p>
+        @Html.ActionLink("EditSubject", "EditSubject", new { id = Model.SubjectID }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
 </div>
-<p>
-    @Html.ActionLink("EditSubject", "EditSubject", new { id = Model.SubjectID }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>
+

@@ -1,0 +1,100 @@
+﻿@model Industrial_tour_reservation_system.Models.Package
+
+@{
+    ViewBag.Title = "DetailsPackage";
+}
+
+
+<div class="conatinerss">
+    <dl>
+        <dt>
+            @Html.DisplayNameFor(model => model.Place.companyName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Place.companyName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Subject.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Subject.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PackageName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PackageName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.startLocation)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.startLocation)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Transport)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Transport)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CostForOne)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CostForOne)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Description)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Description)
+        </dd>
+
+        <dt>
+            @Html.DisplayName("Date")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Day)
+            @Html.DisplayName("/")
+            @Html.DisplayFor(model => model.Month)
+            @Html.DisplayName("/")
+            @Html.DisplayFor(model => model.Year)
+
+        </dd>
+        <dt>
+            @Html.DisplayName("Place")
+        </dt>
+        <dd>
+            @if (Model.Place.Image != null)
+            {
+                <div class="image-size">
+                    <img src="~/imgs/PlaceImages/@Model.Place.Image" alt="error" class="img-responsive image-center" width="300" height="300" />
+                </div>
+            }
+        </dd>
+
+
+    </dl>
+
+        <div style="justify-content:space-between; padding-right:20px">
+            <a class="btn btn-primary" href="@Url.Action("SeePackages", "Visitor")">Back</a>
+
+            <a class="btn btn-primary" href="@Url.Action("Booking", "Visitor")">BookNow</a>
+        </div>
+
+</div>
+

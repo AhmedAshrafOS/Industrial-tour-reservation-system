@@ -2,66 +2,68 @@
 
 @{
     ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
 }
 
-<h2>Index</h2>
 
-<p>
+<div style="margin-top:100px;">
     @Html.ActionLink("Create New", "CreatePlace")
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.companyName)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Image)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Country)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.City)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Street)
-        </th>
-        <th></th>
-    </tr>
+</div>
+<div style="min-height:450px">
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.companyName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Image)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Country)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.City)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Street)
+            </th>
+            <th></th>
+        </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.companyName)
-        </td>
-        <td>
-            @if (item.Image != null)
-            {
-                <div class="image-size">
-                    <img src="~/imgs/PlaceImages/@item.Image" alt="error" class="img-responsive image-center" width="50" height="50" />
-                </div>
-            }
-            else
-            {
-                <img src="~/imgs/no-user.png" width="50" height="50" />
-            }
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Country)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.City)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Street)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "EditPlace", new { id=item.PlaceID }) |
-            @Html.ActionLink("Details", "PlaceDetails", new { id=item.PlaceID }) |
-            @Html.ActionLink("Delete", "DeletePlace", new { id=item.PlaceID })
-        </td>
-    </tr>
-}
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.companyName)
+                </td>
+                <td>
+                    @if (item.Image != null)
+                    {
+                        <div class="image-size">
+                            <img src="~/imgs/PlaceImages/@item.Image" alt="error" class="img-responsive image-center" width="50" height="50" />
+                        </div>
+                    }
+                    else
+                    {
+                        <img src="~/imgs/no-user.png" width="50" height="50" />
+                    }
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Country)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.City)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Street)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "EditPlace", new { id = item.PlaceID }) |
+                    @Html.ActionLink("Details", "PlaceDetails", new { id = item.PlaceID }) |
+                    @Html.ActionLink("Delete", "DeletePlace", new { id = item.PlaceID })
+                </td>
+            </tr>
+        }
 
-</table>
-
+    </table>
+    </div>

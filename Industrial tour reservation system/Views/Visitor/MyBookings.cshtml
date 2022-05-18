@@ -4,92 +4,72 @@
     ViewBag.Title = "MyBookings";
 }
 
-<h2>MyBookings</h2>
 
+<div class="conatinerss">
 
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Package.Place.companyName)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Package.Subject.Name)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Package.PackageName)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Package.startLocation)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Package.Transport)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Package.CostForOne)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Package.Description)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Package.Min)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Package.Hour)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Package.Day)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Package.Month)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Package.Year)
-        </th>
-        <th></th>
-    </tr>
-
-    @foreach (var item in Model.Package_List)
-    {
+    <table class="table">
         <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Place.companyName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Subject.Name)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.PackageName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.startLocation)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Transport)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.CostForOne)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Description)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Min)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Hour)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Day)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Month)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Year)
-            </td>
-            <td>
-            </td>
+            <th>
+                @Html.DisplayNameFor(model => model.Package.Place.companyName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Package.Subject.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Package.PackageName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Package.startLocation)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Package.Transport)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Package.CostForOne)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Package.Description)
+            </th>
+            <th>
+                @Html.DisplayName("Date")
+            </th>
         </tr>
-    }
 
-</table>
+        @foreach (var item in Model.Package_List)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Place.companyName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Subject.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PackageName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.startLocation)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Transport)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CostForOne)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Description)
+                </td>
+                <td>
+                    @Html.DisplayFor(model => item.Day)
+                    @Html.DisplayName("/")
+                    @Html.DisplayFor(model => item.Month)
+                    @Html.DisplayName("/")
+                    @Html.DisplayFor(model => item.Year)
+                </td>
+
+
+            </tr>
+        }
+
+    </table>
+</div>
